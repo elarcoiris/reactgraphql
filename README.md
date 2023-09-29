@@ -4,9 +4,11 @@ Create a .env file with your GITHUB_ACCESS_TOKEN, used in this example, in src/d
 
 ```js
 const accessToken = process.env.GITHUB_ACCESS_TOKEN;
+const username = process.env.GITHUB_USERNAME;
+
 const github = {
     baseURL: "https://api.github.com/graphql",
-    username: "elarcoiris",
+    username,
     headers: {
         "Content-Type": "application/json",
         Authorization: `bearer ${accessToken}`
