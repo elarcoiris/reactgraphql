@@ -9,7 +9,7 @@ import NavButtons from "./NavButtons";
 function App() {
   let [userName, setUserName] = useState('');
   let [repoList, setRepoList] = useState(null);
-  let [pageCount, setPageCount] = useState(10);
+  let [pageCount, setPageCount] = useState(5);
   let [queryString, setQueryString] = useState("");
   let [totalCount, setTotalCount] = useState(null);
   let [startCursor, setStartCursor] = useState(null);
@@ -47,9 +47,11 @@ function App() {
     .catch(error => {
       console.log(error);
     })
-  }, [pageCount, queryString, paginationString, paginationKeyword]);
+    // all things the user inputs/interacts with in the UI
+    // through SearchBox and NavButtons
+  }, [pageCount, queryString, paginationString, paginationKeyword]); 
 
-  useEffect(()=> {
+  useEffect(() => {
     fetchData();
   }, [fetchData]);
   return (
