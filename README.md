@@ -1,6 +1,6 @@
 # Getting Started
 
-Create a .env file with your GITHUB_ACCESS_TOKEN, used in this example, in src/db.js:\
+Create a .env file with your GITHUB_ACCESS_TOKEN and GITHUB_USERNAME, which are used in this example, within src/db.js:\
 
 ```js
 const accessToken = process.env.GITHUB_ACCESS_TOKEN;
