@@ -1,12 +1,9 @@
-const accessToken = process.env.GITHUB_ACCESS_TOKEN ?? "";
-const username = process.env.GITHUB_USERNAME ?? "";
-
 const github = {
     baseURL: "https://api.github.com/graphql",
-    username,
+    username: process.env.REACT_APP_GITHUB_USERNAME,
     headers: {
         "Content-Type": "application/json",
-        Authorization: `bearer ${accessToken}`
+        Authorization: `bearer ${process.env.REACT_APP_GITHUB_ACCESS_TOKEN}`
     }
 }
 export default github;
